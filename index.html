@@ -30,15 +30,20 @@
 <!-- End of Squarespace Headers -->
 
 <style id="kq-gate-style">
-html.kq-locked body>*:not(#kq-gate){display:none!important}
-#kq-gate{position:fixed;inset:0;z-index:2147483647;background:#f7f7f5;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:24px}
-#kq-gate .box{width:100%;max-width:340px;text-align:center}
-#kq-gate h1{font-size:22px;font-weight:600;letter-spacing:.02em;margin:0 0 6px;color:#111}
-#kq-gate p{font-size:14px;color:#666;margin:0 0 22px}
-#kq-gate input{width:100%;box-sizing:border-box;padding:12px 14px;font-size:15px;border:1px solid #ccc;border-radius:8px;outline:none}
-#kq-gate input:focus{border-color:#111}
-#kq-gate button{width:100%;margin-top:12px;padding:12px 14px;font-size:15px;font-weight:600;color:#fff;background:#111;border:0;border-radius:8px;cursor:pointer}
-#kq-gate .err{color:#c0392b;font-size:13px;min-height:18px;margin-top:10px}
+html.kq-locked body>*:not(#kq-gate):not(#kq-bg){display:none!important}
+html.kq-locked body{background:#0d0e11}
+#kq-bg{position:fixed;left:0;right:0;bottom:0;width:100%;height:50%;padding:0;margin:0;z-index:0;pointer-events:auto;display:none}
+html.kq-locked #kq-bg{display:block}
+#kq-gate{position:fixed;inset:0;z-index:2147483647;background:transparent;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:24px}
+#kq-gate .box{width:100%;max-width:340px;text-align:center;position:relative;z-index:10}
+#kq-gate h1{font-size:30px;font-weight:400;letter-spacing:-.01em;margin:0 0 12px;color:#fff}
+#kq-gate p{font-size:14px;color:rgba(255,255,255,0.7);margin:0 0 28px;line-height:1.9}
+#kq-gate input{width:100%;box-sizing:border-box;padding:18px 16px;font-size:15px;border:1px solid rgba(255,255,255,0.3);border-radius:12px;outline:none;background:rgba(0,0,0,0.4);color:#fff;backdrop-filter:blur(10px)}
+#kq-gate input::placeholder{color:rgba(255,255,255,0.5)}
+#kq-gate input:focus{border-color:rgba(255,255,255,0.6)}
+#kq-gate button{width:100%;margin-top:24px;padding:18px 16px;font-size:15px;font-weight:500;color:#fff;background:rgba(255,255,255,0.15);border:none;border-radius:12px;cursor:pointer;backdrop-filter:blur(10px)}
+#kq-gate button:hover{background:rgba(255,255,255,0.25)}
+#kq-gate .err{color:#ff6b6b;font-size:13px;min-height:18px;margin-top:12px}
 
 #block-af59eb9b22fabb35766d { display: none !important; }
 .sqs-html-content { text-align: center; }
@@ -196,7 +201,7 @@ html.kq-locked body>*:not(#kq-gate){display:none!important}
   function build(){
     if(d.getElementById("kq-gate")) return;
     var g=d.createElement("div"); g.id="kq-gate";
-    g.innerHTML='<form class="box"><h1>Karen Quach</h1><p>Enter the passcode to view the portfolio.</p><input type="password" autocomplete="off" placeholder="Passcode" aria-label="Passcode"><button type="submit">Enter</button><div class="err" role="alert"></div></form>';
+    g.innerHTML='<form class="box"><h1>Karen Quach</h1><p>Thanks for visiting! Enter your passcode<br>below to view the portfolio.</p><input type="password" autocomplete="off" placeholder="Passcode" aria-label="Passcode"><button type="submit">Enter</button><div class="err" role="alert"></div></form>';
     d.body.appendChild(g);
     var f=g.querySelector("form"), i=g.querySelector("input"), e=g.querySelector(".err");
     f.addEventListener("submit",function(ev){
@@ -216,6 +221,8 @@ html.kq-locked body>*:not(#kq-gate){display:none!important}
 
 <body id="collection-5baeae52f4e1fc862f9336b9" class="hide-folder-symbol index-transition-fade   auto-play slides-click-through lightbox-transition-slide content-alignment-center  underline-body-links  sidebar-position-right show-social-icons social-icon-style-normal show-category-navigation   event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts event-list-cta-button   event-list-compact-view  product-list-titles-under product-list-alignment-left product-item-size-11-square product-image-auto-crop product-gallery-size-11-square product-gallery-auto-crop show-product-price show-product-item-nav product-social-sharing tweak-v1-related-products-image-aspect-ratio-11-square tweak-v1-related-products-details-alignment-center newsletter-style-dark hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-page collection-5baeae52f4e1fc862f9336b9 collection-layout-default homepage mobile-style-available page-about">
   <div class="sqs-announcement-bar-dropzone"></div><!--Fixes index page loading issue when announcement bar is enabled -->
+
+  <canvas id="kq-bg" aria-hidden="true"></canvas>
 
   <div id="canvasWrapper">
 
@@ -820,6 +827,201 @@ body #block-c5c23bebe2a7f43cd7ce .sqs-html-content a[href^="mailto:"]:hover {
       });
     }
   }
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script>
+(function(){
+  var canvas = document.getElementById('kq-bg');
+  if (!canvas || !window.THREE) return;
+
+  var AMOUNTX = 120, AMOUNTY = 60, SEPARATION = 35;
+  var GLOW_COUNT = 15;
+
+  var camera, scene, renderer;
+  var particles, glowParticles, count = 0;
+  var mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+  var windowHalfX = window.innerWidth / 2;
+  var windowHalfY = window.innerHeight / 2;
+
+  function size() {
+    return {
+      w: canvas.clientWidth || window.innerWidth,
+      h: canvas.clientHeight || window.innerHeight
+    };
+  }
+
+  function init() {
+    var s = size();
+    camera = new THREE.PerspectiveCamera(50, s.w / s.h, 1, 10000);
+    camera.position.set(0, 180, 900);
+
+    scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x0d0e11, 0.0008);
+
+    var numParticles = AMOUNTX * AMOUNTY;
+    var positions = new Float32Array(numParticles * 3);
+    var scales = new Float32Array(numParticles);
+
+    var i = 0, j = 0;
+    for (var ix = 0; ix < AMOUNTX; ix++) {
+      for (var iy = 0; iy < AMOUNTY; iy++) {
+        positions[i] = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+        positions[i + 1] = 0;
+        positions[i + 2] = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
+        scales[j] = 1;
+        i += 3;
+        j++;
+      }
+    }
+
+    var geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
+
+    var material = new THREE.ShaderMaterial({
+      uniforms: { color: { value: new THREE.Color(0xffffff) } },
+      vertexShader: [
+        'attribute float scale;',
+        'void main() {',
+        '  vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);',
+        '  gl_PointSize = scale * (180.0 / -mvPosition.z);',
+        '  gl_Position = projectionMatrix * mvPosition;',
+        '}'
+      ].join('\n'),
+      fragmentShader: [
+        'uniform vec3 color;',
+        'void main() {',
+        '  if (length(gl_PointCoord - vec2(0.5, 0.5)) > 0.45) discard;',
+        '  gl_FragColor = vec4(color, 0.4);',
+        '}'
+      ].join('\n'),
+      transparent: true
+    });
+
+    particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+
+    var glowPositions = new Float32Array(GLOW_COUNT * 3);
+    var glowScales = new Float32Array(GLOW_COUNT);
+    for (var g = 0; g < GLOW_COUNT; g++) {
+      glowPositions[g * 3] = (Math.random() - 0.5) * 3000;
+      glowPositions[g * 3 + 1] = (Math.random() - 0.5) * 200;
+      glowPositions[g * 3 + 2] = (Math.random() - 0.5) * 800;
+      glowScales[g] = 8 + Math.random() * 12;
+    }
+
+    var glowGeometry = new THREE.BufferGeometry();
+    glowGeometry.setAttribute('position', new THREE.BufferAttribute(glowPositions, 3));
+    glowGeometry.setAttribute('scale', new THREE.BufferAttribute(glowScales, 1));
+
+    var glowMaterial = new THREE.ShaderMaterial({
+      uniforms: { color: { value: new THREE.Color(0xffffff) } },
+      vertexShader: [
+        'attribute float scale;',
+        'void main() {',
+        '  vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);',
+        '  gl_PointSize = scale * (200.0 / -mvPosition.z);',
+        '  gl_Position = projectionMatrix * mvPosition;',
+        '}'
+      ].join('\n'),
+      fragmentShader: [
+        'uniform vec3 color;',
+        'void main() {',
+        '  float d = length(gl_PointCoord - vec2(0.5));',
+        '  float alpha = smoothstep(0.5, 0.0, d) * 0.5;',
+        '  gl_FragColor = vec4(color, alpha);',
+        '}'
+      ].join('\n'),
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    glowParticles = new THREE.Points(glowGeometry, glowMaterial);
+    scene.add(glowParticles);
+
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(s.w, s.h);
+    canvas.style.width = s.w + 'px';
+
+    document.addEventListener('mousemove', onDocumentMouseMove);
+    window.addEventListener('resize', onWindowResize);
+  }
+
+  function onWindowResize() {
+    var s = size();
+    camera.aspect = s.w / s.h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(s.w, s.h);
+    canvas.style.width = s.w + 'px';
+  }
+
+  function onDocumentMouseMove(event) {
+    mouseX = (event.clientX - windowHalfX) * 0.4;
+    mouseY = (event.clientY - windowHalfY) * 0.4;
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    targetX += (mouseX - targetX) * 0.04;
+    targetY += (mouseY - targetY) * 0.04;
+
+    camera.position.x = targetX;
+    camera.position.y = 200 + -targetY * 0.4;
+    camera.lookAt(0, 0, 0);
+
+    var positions = particles.geometry.attributes.position.array;
+    var scales = particles.geometry.attributes.scale.array;
+
+    var time = count * 0.4;
+    var i = 0, j = 0;
+
+    for (var ix = 0; ix < AMOUNTX; ix++) {
+      for (var iy = 0; iy < AMOUNTY; iy++) {
+        var x = ix - AMOUNTX * 0.5;
+        var z = iy - AMOUNTY * 0.5;
+
+        var dist = Math.sqrt(x * x + z * z);
+        var angle = Math.atan2(z, x);
+
+        var wave1 = Math.sin(dist * 0.025 + time * 0.6) * 45;
+        var wave2 = Math.cos(x * 0.035 + time * 0.5) * 40;
+        var wave3 = Math.sin(z * 0.03 + time * 0.55) * 35;
+        var wave4 = Math.sin((x + z) * 0.02 + time * 0.4) * 30;
+        var wave5 = Math.cos(dist * 0.02 - time * 0.35) * 25;
+        var wave6 = Math.sin(angle * 2 + time * 0.3) * 20;
+
+        var height = wave1 + wave2 + wave3 + wave4 + wave5 + wave6;
+
+        positions[i + 1] = height;
+
+        var normalizedHeight = (height + 195) / 390;
+        scales[j] = 0.3 + normalizedHeight * 1.8;
+
+        i += 3;
+        j++;
+      }
+    }
+
+    var glowPos = glowParticles.geometry.attributes.position.array;
+    for (var g = 0; g < GLOW_COUNT; g++) {
+      glowPos[g * 3 + 1] += Math.sin(time + g) * 0.3;
+    }
+    glowParticles.geometry.attributes.position.needsUpdate = true;
+
+    particles.geometry.attributes.position.needsUpdate = true;
+    particles.geometry.attributes.scale.needsUpdate = true;
+
+    renderer.render(scene, camera);
+    count += 0.018;
+  }
+
+  init();
+  animate();
 })();
 </script>
 </body>
