@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff2d55">
+        <animate attributeName="stop-color" values="#ff2d55;#ff6b35;#ffcc00;#34c759;#007aff;#af52de;#ff2d55" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="25%" style="stop-color:#ff6b35">
+        <animate attributeName="stop-color" values="#ff6b35;#ffcc00;#34c759;#007aff;#af52de;#ff2d55;#ff6b35" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#34c759">
+        <animate attributeName="stop-color" values="#34c759;#007aff;#af52de;#ff2d55;#ff6b35;#ffcc00;#34c759" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="75%" style="stop-color:#007aff">
+        <animate attributeName="stop-color" values="#007aff;#af52de;#ff2d55;#ff6b35;#ffcc00;#34c759;#007aff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#af52de">
+        <animate attributeName="stop-color" values="#af52de;#ff2d55;#ff6b35;#ffcc00;#34c759;#007aff;#af52de" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    @keyframes flow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -100; }
+    }
+    .animated-text {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 48px;
+      font-weight: 200;
+      letter-spacing: 4px;
+      fill: none;
+      stroke: url(#gradient);
+      stroke-width: 1.5;
+      stroke-dasharray: 10, 5;
+      animation: flow 3s linear infinite;
+      filter: url(#glow);
+    }
+  </style>
+  <text x="10" y="55" class="animated-text">karen quach</text>
+</svg>
